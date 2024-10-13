@@ -1,0 +1,5 @@
+langchain_community
+ollama
+black
+langchain-mistralai
+beautifulsoup4
