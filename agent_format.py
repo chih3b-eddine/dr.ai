@@ -8,16 +8,6 @@ from langchain_core.output_parsers import StrOutputParser
 OLLAMA_URL = "http://127.0.0.1:11434"
 
 
-def extact_json_from_text(text):
-    pattern = r'"s*(\{.*?\}|\[.*?\])\s*"'
-    matches = re.findall(pattern, text, re.DOTALL)
-    if matches:
-        json_string = matches[-1]
-        return f"{json_string}"
-    else:
-        return text
-
-
 def create_formatting_agent(
     model: str = "llama3.1:8b", ollama_url: str = OLLAMA_URL, temperature: float = 0.0
 ):
